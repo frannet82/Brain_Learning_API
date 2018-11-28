@@ -11,7 +11,8 @@ const database = {
     users: [
         {
             id: '123',
-            name: 'john',
+            firstname: 'john',
+            lastname: 'talavi',
             email: 'john@gmail.com',
             password: 'cookies',
             entries: 0,
@@ -20,7 +21,8 @@ const database = {
         },
         {
             id: '124',
-            name: 'sally',
+            firstname: 'sally',
+            lastname: 'bonner',
             email: 'sally@gmail.com',
             password: 'bananas',
             entries: 0,
@@ -64,11 +66,12 @@ app.post('/signin',(req,res)=>{
 });
 
 app.post('/register',(req,res)=>{
-    const {email, password, name} = req.body;
+    const {email, password, firstname, lastname} = req.body;
     database.users.push({
 
             id: '125',
-            name: name,
+            firstname: firstname,
+            lastname: lastname,
             email: email,
             password: password,
             entries: '',
